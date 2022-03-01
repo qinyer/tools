@@ -100,7 +100,7 @@ func generateFileContent(gen *protogen.Plugin, file *protogen.File, g *protogen.
 }
 
 func generateTripleService(gen *protogen.Plugin, file *protogen.File, g *protogen.GeneratedFile, service *protogen.Service) {
-	clientName := service.GoName + "Client"
+	clientName := service.GoName + "TripleClient"
 
 	g.P("// ", clientName, " is the client API for ", service.GoName, " service.")
 	g.P("//")
@@ -182,7 +182,7 @@ func generateTripleService(gen *protogen.Plugin, file *protogen.File, g *protoge
 	}
 
 	// Server interface.
-	serverType := service.GoName + "Server"
+	serverType := service.GoName + "TripleServer"
 	g.P("// ", serverType, " is the server API for ", service.GoName, " service.")
 	g.P("// All implementations ", mustOrShould, " embed Unimplemented", serverType)
 	g.P("// for forward compatibility")
